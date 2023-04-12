@@ -1,0 +1,25 @@
+.link {
+  text-decoration: none;
+  font-weight: 500;
+  color: #2a363b;
+  font-size: 18px;
+}
+
+.moviesList {
+  max-width: 600px;
+  outline: 1px solid black;
+  padding: 20px 40px;
+  border-radius: 2px;
+}
+
+.moviesItem {
+  padding: 2px;
+  font-weight: 500;
+  color: #2a363b;
+  font-size: 18px;
+  transition: color 250ms linear;
+}
+
+.moviesItem:hover {
+  color: #2196f3;
+}

@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
-
 import Api from 'Api/Api';
 import SearchForm from 'components/SearchForm/SearchForm';
 import MoviesList from 'components/MoviesList/MoviesList';
+import useSearchParams from 'hooks/useSearchParams';
 
 export default function MoviesView() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useSearchParams('query', '');
   const [movies, setMovies] = useState(null);
 
   const onSubmit = cerrentQuery => {
+    setMovies(null);
     setQuery(cerrentQuery);
   };
   useEffect(() => {
@@ -22,7 +23,7 @@ export default function MoviesView() {
   return (
     <>
       <SearchForm handleSubmit={onSubmit} />
-      {movies && <MoviesList movies={movies} />}
+      {movies && <MoviesList movies={movies} query={query} />}
     </>
   );
 }

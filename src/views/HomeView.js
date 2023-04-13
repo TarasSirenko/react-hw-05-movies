@@ -5,7 +5,7 @@ import MoviesList from 'components/MoviesList/MoviesList';
 import Api from '../Api/Api.js';
 
 export default function HomeView() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(null);
   useEffect(() => {
     Api.fetchTrendingMovie().then(response => {
       setMovies(response.results);

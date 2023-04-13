@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Api from 'Api/Api';
 
-export default function MovieInfoCard(params) {
+export default function MovieInfoCard() {
   const [movie, setMovie] = useState(null);
 
   const movieId = useParams().movieId;

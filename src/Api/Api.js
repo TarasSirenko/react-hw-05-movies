@@ -23,7 +23,11 @@ function fetchReviewsById(id) {
 }
 function fetchInfoMovieByName(query) {
   return fetch(`${BASE_URL}/3/search/movie?api_key=${KEY}&query=${query}`).then(
-    response => response.json(),
+    response => {
+      if (!response.ok)
+        Promise.reject(new Error('По вашему запросу нет фильмов'));
+      return response.json();
+    },
   );
 }
 

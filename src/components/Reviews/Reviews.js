@@ -10,7 +10,6 @@ export default function Reviews() {
     Api.fetchReviewsById(id).then(({ results }) => setReviews(results));
   }, [id]);
   if (reviews && reviews.length === 0) {
-    console.log('kuhgkgkghk');
     return <h3>We dont have any reviews for this movie.</h3>;
   }
   return (
